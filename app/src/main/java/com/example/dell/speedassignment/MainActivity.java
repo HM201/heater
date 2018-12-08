@@ -12,25 +12,20 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity  {
 
 
-    String color1 ,color2,color3;
+    String color1 ,color2,color3,color4,color5;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button =findViewById(R.id.button);
-        ConstraintLayout viewssss=findViewById(R.id.myconstarint);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoactivity2(v);
-            }
-        });
-
-
-        viewssss.setOnTouchListener(handleTouch);
-
+//        Button button =findViewById(R.id.button);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                gotoactivity2(v);
+//            }
+//        });
 }
     public void onRadioButtonClicked1(View view) {
 
@@ -47,7 +42,15 @@ public class MainActivity extends AppCompatActivity  {
         {
             color3="blue";
         }
-        else if (view.getId() ==R.id.green1)
+        else if (view.getId()  ==R.id.blue4)
+        {
+            color4="blue";
+        }
+        else if (view.getId()  ==R.id.blue5)
+        {
+            color5="blue";
+        }
+        if (view.getId() ==R.id.green1)
         {
             color1="green";
         }
@@ -59,7 +62,15 @@ public class MainActivity extends AppCompatActivity  {
         {
             color3="green";
         }
-        else if (view.getId() ==R.id.red1)
+        else if (view.getId()  ==R.id.green4)
+        {
+            color4="green";
+        }
+        else if (view.getId()  ==R.id.green5)
+        {
+            color5="green";
+        }
+        if (view.getId() ==R.id.red1)
         {
             color1="red";
         }
@@ -71,6 +82,55 @@ public class MainActivity extends AppCompatActivity  {
         {
             color3="red";
         }
+        else if (view.getId()  ==R.id.red4)
+        {
+            color4="red";
+        }
+        else if (view.getId()  ==R.id.red5)
+        {
+            color5="red";
+        }
+        if (view.getId() ==R.id.yellow1)
+        {
+            color1="yellow";
+        }
+        else if (view.getId() ==R.id.yellow2)
+        {
+            color2="yellow";
+        }
+        else if (view.getId() ==R.id.yellow3)
+        {
+            color3="yellow";
+        }
+        else if (view.getId()  ==R.id.yellow4)
+        {
+            color4="yellow";
+        }
+        else if (view.getId()  ==R.id.yellow5)
+        {
+            color5="yellow";
+        }
+        if (view.getId() ==R.id.cyan1)
+        {
+            color1="cyan";
+        }
+        else if (view.getId() ==R.id.cyan2)
+        {
+            color2="cyan";
+        }
+        else if (view.getId() ==R.id.cyan3)
+        {
+            color3="cyan";
+        }
+        else if (view.getId()  ==R.id.cyan4)
+        {
+            color4="cyan";
+        }
+        else if (view.getId()  ==R.id.cyan5)
+        {
+            color5="cyan";
+        }
+
 
     }
     public void gotoactivity2(View view) {
@@ -80,30 +140,11 @@ public class MainActivity extends AppCompatActivity  {
         intent.putExtra("col1", color1);
         intent.putExtra("col2", color2);
         intent.putExtra("col3", color3);
+        intent.putExtra("col4", color4);
+        intent.putExtra("col5", color5);
+
         startActivity(intent);
     }
-    private View.OnTouchListener handleTouch = new View.OnTouchListener() {
 
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-
-            int x = (int) event.getX();
-            int y = (int) event.getY();
-
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    Log.i("TAG", "touched down");
-                    break;
-                case MotionEvent.ACTION_MOVE:
-                    Log.i("TAG", "moving: (" + x + ", " + y + ")");
-                    break;
-                case MotionEvent.ACTION_UP:
-                    Log.i("TAG", "touched up");
-                    break;
-            }
-
-            return true;
-        }
-    };
 
 }

@@ -29,7 +29,7 @@ public class GLHeatmap {
 	 * @param alphaRange Not in use
 	 * @throws Exception
 	 */
-	public GLHeatmap(final int width, final int height, Boolean intensityToAlpha, Object gradientTexture, float[] alphaRange, String col1, String col2, String col3) throws Exception {
+	public GLHeatmap(final int width, final int height, Boolean intensityToAlpha, Object gradientTexture, float[] alphaRange, String col1, String col2, String col3, String col4, String col5) throws Exception {
 
 		this.width = width;
 		this.height = height;
@@ -43,10 +43,10 @@ public class GLHeatmap {
 		String getColorFun  =
 			"vec3 getColor(float intensity){						\n" +
 			"    vec3 "+col1+"   = vec3(0.0, 0.0, 1.0);					\n" +
-			"    vec3 cyan   = vec3(0.0, 1.0, 1.0);					\n" +
-			"    vec3 "+ col2 +"  = vec3(0.0, 1.0, 0.0);					\n" +
-			"    vec3 yellow = vec3(1.0, 1.0, 0.0);					\n" +
-			"    vec3 " + col3 + "    = vec3(1.0, 0.0, 0.0);					\n" +
+			"    vec3 "+ col2 +"   = vec3(0.0, 1.0, 1.0);					\n" +
+			"    vec3 "+ col3 +"  = vec3(0.0, 1.0, 0.0);					\n" +
+			"    vec3 "+ col4 +" = vec3(1.0, 1.0, 0.0);					\n" +
+			"    vec3 " + col5 +"    = vec3(1.0, 0.0, 0.0);					\n" +
 			"    \n" +
 			"    vec3 color = (\n" +
 			"        fade(-0.25, 0.25, intensity)*blue +			\n" +

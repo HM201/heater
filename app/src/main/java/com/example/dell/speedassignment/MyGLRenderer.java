@@ -17,16 +17,18 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
 	private static final String LOG = "MyGLRenderer";
 	private GLHeatmap mHeatmap;
-	private String col11,  col22,  col33;
+	private String col11,  col22,  col33,  col44,  col55;
 	// mMVPMatrix is an abbreviation for "Model View Projection Matrix"
 	private final float[] mMVPMatrix = new float[16];
 	private final float[] mProjectionMatrix = new float[16];
 	private final float[] mViewMatrix = new float[16];
 
-	public MyGLRenderer(String col1, String col2, String col3) {
+	public MyGLRenderer(String col1, String col2, String col3, String col4, String col5) {
 		this.col11=col1;
 		this.col22=col2;
 		this.col33=col3;
+		this.col44=col4;
+		this.col55=col5;
 
 	}
 
@@ -76,7 +78,7 @@ Log.i(LOG, "width=" + width + ", height=" + height);
 
 		try {
 			if (mHeatmap == null) {
-				mHeatmap = new GLHeatmap(width, height, null, null, null, col11, col22, col33);
+				mHeatmap = new GLHeatmap(width, height, null, null, null, col11, col22, col33, col44, col55);
 				mHeatmap.addPoint(200, 100, 100, 0.8f);
 				mHeatmap.addPoint(200, 160, 100, 0.7f);
 				mHeatmap.addPoint(300, 310, 100, 0.5f);
@@ -128,82 +130,7 @@ Log.i(LOG, "width=" + width + ", height=" + height);
 	public void onTouchEvent(float x, float y) {
 		double i = (double) Math.random();
 		if (i < 0.4) i = 0.4f;
-//		double small, midum, large;
-//		if(col11==0.3){ //red is cold
-//			if(col22==0.6){
-//				if(i  < 0.3){
-//					i=0.9f;
-//				}
-//				if(i  > 0.3){
-//					i= 0.6f;
-//				}
-//				if(i  > 0.6){
-//					i=0.3f;
-//				}
-//			}else{
-//				if(i  < 0.3){
-//					i=0.9f;
-//				}
-//				if(i  > 0.3){
-//					i= 0.3f;
-//				}
-//				if(i  > 0.6){
-//					i=0.6f;
-//				}
-//			}
-//
-//
-//		}
-//		if(col11==0.6){ //red is cold
-//			if(col22==0.3){
-//				if(i  < 0.3){
-//					i=0.3f;
-//				}
-//				if(i  > 0.3){
-//					i= 0.6f;
-//				}
-//				if(i  > 0.6){
-//					i=0.9f;
-//				}
-//			}else{
-//				if(i  < 0.3){
-//					i=0.6f;
-//				}
-//				if(i  > 0.3){
-//					i= 0.9f;
-//				}
-//				if(i  > 0.6){
-//					i=0.3f;
-//				}
-//			}
-//
-//
-//		}
-//		if(col11==0.9){ //red is cold
-//			if(col22==0.3){
-//				if(i  < 0.3){
-//					i=0.6f;
-//				}
-//				if(i  > 0.3){
-//					i= 0.3f;
-//				}
-//				if(i  > 0.6){
-//					i=0.9f;
-//				}
-//			}else{
-//				if(i  < 0.3){
-//					i=0.9f;
-//				}
-//				if(i  > 0.3){
-//					i= 0.6f;
-//				}
-//				if(i  > 0.6){
-//					i=0.3f;
-//				}
-//			}
-//
-//
-//		}
+
 		Log.i(LOG, "intensity="+ i);
 		mHeatmap.addPoint(x, y, 150, (float) i);
 	}

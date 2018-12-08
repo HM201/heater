@@ -31,10 +31,12 @@ public class OpenGLES20Activity extends Activity {
 		String color1 = getIntent().getStringExtra("col1");
 		String color2 = getIntent().getStringExtra("col2");
 		String color3 = getIntent().getStringExtra("col3");
+		String color4 = getIntent().getStringExtra("col4");
+		String color5 = getIntent().getStringExtra("col5");
 		Log.d("lks;ddsd", String.valueOf(color2));
 		// Create a GLSurfaceView instance and set it
 		// as the ContentView for this Activity
-		mGLView = new MyGLSurfaceView(this,color1,color2,color3);
+		mGLView = new MyGLSurfaceView(this,color1,color2,color3,color4,color5);
 		setContentView(mGLView);
 	}
 
